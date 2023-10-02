@@ -1,0 +1,44 @@
+.switcher {
+  border: solid 2px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.switcher_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  gap: 20px;
+  background: white;
+  padding: 3px;
+  position: relative;
+  overflow: hidden;
+
+  span {
+    position: absolute;
+    background: #1C274C;
+    inset: 0;
+    z-index: 1;
+    border-radius: 200px;
+  }
+
+  div {
+    color: #1C274C;
+    position: relative;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  p {
+    padding: 13px 20px;
+    position: relative;
+    font-size: 14px;
+    z-index: 15;
+  }
+}
+
+
+.active {
+  color: white;
+  transition: color .3s;
+}

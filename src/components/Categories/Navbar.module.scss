@@ -1,0 +1,25 @@
+.categories {
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 120px;
+  gap: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: #FFFF;
+
+  .category {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    opacity: 0.25;
+  }
+
+  .active {
+    opacity: 1;
+  }
+}
+
+
+
