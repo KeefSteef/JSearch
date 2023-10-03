@@ -1,0 +1,33 @@
+.search_box {
+    position: relative;
+    margin-top: 10px;
+}
+
+.search_box_container {
+    position: absolute;
+    background: white;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-bottom: 10px;
+}
+
+
+.search_box_selected_langs {
+    border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
+}
+
+.search_box_selected_langs_container {
+    display: flex;
+    padding: 20px 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    width: 80%;
+    
+
+    ul {
+        padding: 10px;
+
+    }
+}

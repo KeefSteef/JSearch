@@ -1,0 +1,15 @@
+.lang {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    img {
+        width: 23px;
+        height: 23px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}

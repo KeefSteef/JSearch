@@ -1,0 +1,16 @@
+.badge {
+    display: flex;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 20px;
+    background: #1C274C;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: white;
+    gap: 10px;
+}
+
+.badge img {
+    width: 13px;
+    height: 13px;
+}
