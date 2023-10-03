@@ -4,12 +4,10 @@ import cls from './Map.module.scss'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAP_ACCESS_TOKEN
 
-//TODO: Change on Ukraine
-
 const coords = {
-  lng: -70.9,
-  lat: 42.35,
-  zoom: 9,
+  lng: 31.590314335766053,
+  lat: 48.972272868662245,
+  zoom: 5.7,
 }
 
 function Map() {
@@ -20,7 +18,7 @@ function Map() {
     if (map.current) return
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: 'mapbox://styles/mapbox/navigation-night-v1',
+      style: 'mapbox://styles/mapbox/light-v11',
       center: [coords.lng, coords.lat],
       zoom: coords.zoom,
     })

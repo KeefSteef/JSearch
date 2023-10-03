@@ -2,6 +2,7 @@ import cls from './Navbar.module.scss'
 import Button from '../UI/Button/Button.jsx'
 import Switcher from '../UI/Switcher/Switcher.jsx'
 import { v4 } from 'uuid'
+import Select from '../UI/Select/Select.jsx'
 
 function Navbar() {
   return (
@@ -20,6 +21,14 @@ function Navbar() {
             },
           ]}
         />
+        <Select>
+          <option value="1">PHP</option>
+          <option value="2">JS</option>
+          <option value="3">Lang</option>
+          <option value="1">PHP</option>
+          <option value="2">JS</option>
+          <option value="3">Lang</option>
+        </Select>
       </div>
       <div className={cls.auth_btns}>
         <Button type={'dark'}>Post a job</Button>
