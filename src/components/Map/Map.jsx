@@ -24,11 +24,7 @@ function Map() {
     })
   }, [])
 
-  return (
-    <div>
-      <div ref={mapContainer} className={cls.map_container} />
-    </div>
-  )
+  return <div ref={mapContainer} className={cls.map_container} />
 }
 
 export default Map
