@@ -14,6 +14,8 @@ function Map() {
   const mapContainer = useRef(null)
   const map = useRef(null)
 
+  //TODO: After adding skeleton, change on useEffect
+
   useLayoutEffect(() => {
     if (map.current) return
     map.current = new mapboxgl.Map({

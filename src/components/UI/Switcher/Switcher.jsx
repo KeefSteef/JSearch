@@ -1,14 +1,20 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import cls from './Switcher.module.scss'
 import { motion } from 'framer-motion'
+import { v4 } from 'uuid'
+
+const getVariantWithId = function createVariantObjectWithId(variants) {
+  return variants.map((variant) => ({ label: variant, id: v4() }))
+}
 
 function Switcher({ variants = [], name }) {
-  const [activeVariant, setActiveVariant] = useState(variants[0].id)
+  const { current: variantsWithId } = useRef(getVariantWithId(variants))
+  const [activeVariant, setActiveVariant] = useState(variantsWithId[0].id)
 
   return (
     <div className={cls.switcher}>
       <div className={cls.switcher_container}>
-        {variants.map((item) => {
+        {variantsWithId.map((item) => {
           const isActive = activeVariant === item.id
           return (
             <div key={item.id} onClick={() => setActiveVariant(item.id)}>

@@ -9,9 +9,7 @@ function Home() {
     <section className={cls.home_page}>
       <Categories />
       <main className={cls.main}>
-        <div className="main_nav">
-          <Navbar />
-        </div>
+        <Navbar />
         <div className={cls.main_content}>
           <Map />
           <VacationBoard />
