@@ -8,15 +8,15 @@ export default function SearchLangInput({ isTouched, langsData = [] }) {
 
   return (
     <div className={cls.search_lang_container}>
-      <div className={cls.search_lang_input} onClick={() => inputRef.current.focus()}>
+      <div className={cls.search_lang_input}>
         {!isTouched && (
-          <>
-            <Badge>{firstLang.label}</Badge>
-            {langsData.length > 1 && <Badge onlyView>+{langsData.length - 1}</Badge>}
-          </>
+          <div className={cls.badges}>
+            <Badge short={langsData.length > 1}>{firstLang.label}</Badge>
+            {langsData.length > 1 && <Badge onlyView>+{1}</Badge>}
+          </div>
         )}
-        <input ref={inputRef} type="text" />
-        <img src="/search.svg" alt="Search icon" />
+        {isTouched && <input autoFocus={true} ref={inputRef} type="text" />}
+        <img src="/search.svg" alt="Search icon" className={cls.search} />
       </div>
     </div>
   )

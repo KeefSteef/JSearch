@@ -1,8 +1,8 @@
 import cls from './Home.module.scss'
 import Categories from '../../components/Categories/Categories.jsx'
 import Navbar from '../../components/Navbar/Navbar.jsx'
-import Map from '../../components/Map/Map.jsx'
 import VacationBoard from '../../components/VacationBoard/VacationBoard.jsx'
+import MapWrap from '../../components/MapWrap/MapWrap.jsx'
 
 function Home() {
   return (
@@ -11,7 +11,7 @@ function Home() {
       <main className={cls.main}>
         <Navbar />
         <div className={cls.main_content}>
-          <Map />
+          <MapWrap />
           <VacationBoard />
         </div>
       </main>

@@ -1,0 +1,31 @@
+@import "src/scss/var";
+@import "src/scss/mixin";
+
+.upload {
+
+  input[type="file"] {
+    display: none;
+  }
+
+
+  .custom_file_upload {
+    border: 2px dashed $dark-blue;
+    padding: 6px 12px;
+    width: 100%;
+    @include flex-center;
+    border-radius: 5px;
+    height: 150px;
+    cursor: pointer;
+    font-size: 17px;
+
+    img {
+      margin-right: 10px;
+      width: 35px;
+      height: 35px;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

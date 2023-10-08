@@ -1,0 +1,54 @@
+@import "src/scss/var";
+@import "src/scss/mixin";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  .basic_info_input {
+    width: 100%;
+  }
+
+  .basic_info_input input, textarea {
+    border: solid 2px $dark-blue;
+    color: $dark-blue;
+    font-weight: bold;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+    margin-top: 11px;
+    padding: 8px;
+    width: 100%;
+  }
+
+  textarea {
+    min-height: 200px;
+  }
+}
+
+.form label {
+  @include text-form-style
+}
+
+.form_desc textarea {
+  width: 100%;
+  resize: none;
+}
+
+
+.form_tip {
+  font-weight: bold;
+  font-size: 18px;
+  opacity: .3;
+  color: $dark-blue;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.basic_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}

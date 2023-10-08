@@ -1,0 +1,57 @@
+@import "src/scss/var";
+@import "src/scss/mixin";
+
+.point {
+  width: 35px;
+  height: 35px;
+  z-index: 150;
+  cursor: pointer;
+}
+
+.point_container {
+  @include flex-center;
+  flex-direction: column;
+  position: relative;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+.popup {
+  position: absolute;
+  bottom: 45px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  width: 235px;
+}
+
+
+.position {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  cursor: pointer;
+  padding: 15px;
+  transition: .2s;
+  border-radius: 5px;
+
+
+  &:hover {
+    background: rgba(#D9D9D9, .3);
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+
+  p {
+    @include text-form-style;
+  }
+
+}

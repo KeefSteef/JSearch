@@ -1,17 +1,35 @@
+@import "src/scss/mixin";
+@import "src/scss/var";
+
+
 .badge {
   display: flex;
   font-weight: bold;
   font-size: 12px;
-  border-radius: 50%;
-  background: #1C274C;
-  //padding: 5px 10px;
+  border-radius: 20px;
+  background: $dark_blue;
   cursor: pointer;
   padding: 7px;
   color: white;
   gap: 10px;
 }
 
+.onlyView {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  @include flex-center;
+  padding: 0;
+}
+
 .badge img {
   width: 13px;
   height: 13px;
+}
+
+.short {
+  width: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

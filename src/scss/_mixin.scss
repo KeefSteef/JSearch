@@ -1,3 +1,11 @@
-@mixin reset-list {
-  
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text-form-style {
+  color: #1C274C;
+  font-weight: bold;
+  font-size: 14px;
 }
