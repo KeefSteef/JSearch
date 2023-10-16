@@ -7,9 +7,7 @@ export default function Badge({ children, onlyView = false, short = false }) {
       onClick={(event) => event.stopPropagation()}
     >
       <p className={` ${short ? cls.short : ''}`}>{children}</p>
-      {!onlyView && (
-        <img src="/cross.svg" alt="badge cross" onClick={() => console.log('Badge!!!')} />
-      )}
+      {!onlyView && <img src="/cross.svg" alt="badge cross" />}
     </div>
   )
 }

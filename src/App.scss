@@ -1,4 +1,5 @@
 @import "styles/normalize";
+@import "src/scss/mixin";
 @import "styles/var";
 
 * {
@@ -10,4 +11,11 @@
 
 body, html {
   overflow-x: hidden;
+}
+
+.info_title {
+  @include text-form-style;
+  padding-bottom: 20px;
+  border-bottom: solid 2px rgba($dark_blue, .1);
+  font-size: 13px;
 }

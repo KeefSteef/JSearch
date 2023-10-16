@@ -12,7 +12,7 @@ function Switcher({ variants = [], name }) {
   const [activeVariant, setActiveVariant] = useState(variantsWithId[0].id)
 
   return (
-    <div className={cls.switcher}>
+    <div className={`${cls.switcher} switcher`}>
       <div className={cls.switcher_container}>
         {variantsWithId.map((item) => {
           const isActive = activeVariant === item.id
