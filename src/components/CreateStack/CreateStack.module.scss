@@ -1,3 +1,40 @@
-@import "src/scss/var";
-@import "src/scss/mixin";
+@import 'src/scss/var';
+@import 'src/scss/mixin';
 
+.createStack {
+  @include flex-center;
+  padding: 25px 50px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: max-content;
+
+  button {
+    margin-top: 12px;
+    background: $dark-blue;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    color: #ffff;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px 24px;
+  }
+}
+
+.name {
+  width: 100%;
+  @include position_input();
+  &::placeholder {
+    color: $dark-blue;
+  }
+}
+
+.rates_container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  gap: 10px;
+}

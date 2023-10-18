@@ -4,8 +4,9 @@ import StackInput from '../UI/StackInput/StackInput.jsx'
 function CreateStackCircle(props) {
   return (
     <div className={cls.stack_circle}>
-      <StackInput />
-      <div data-progress="100"></div>
+      <div data-progress="100">
+        <StackInput />
+      </div>
     </div>
   )
 }

@@ -1,7 +1,23 @@
-@import "src/scss/var";
-@import "src/scss/mixin";
-
+@import 'src/scss/var';
+@import 'src/scss/mixin';
 
 .stack {
   margin-top: 35px;
+}
+
+.stack_container {
+  padding-top: 35px;
+}
+
+.created_stack {
+  @include flex-center();
+  justify-content: center;
+  width: 100%;
+}
+
+.stack_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }

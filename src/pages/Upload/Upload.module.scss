@@ -1,9 +1,9 @@
-@import "src/scss/var";
-@import "src/scss/mixin";
+@import 'src/scss/var';
+@import 'src/scss/mixin';
 
 .upload {
   background: $dark_blue;
-  padding: 86px 280px;
+  padding: 86px 100px;
 
   .info_title {
     background: red;
@@ -35,7 +35,8 @@
   }
 }
 
-.header, .main:nth-child(1) {
+.header,
+.main:nth-child(1) {
   h3 {
     font-size: 20px;
   }

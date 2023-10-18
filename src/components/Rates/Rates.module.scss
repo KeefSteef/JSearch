@@ -1,0 +1,28 @@
+@import 'src/scss/var';
+@import 'src/scss/mixin';
+
+.stars {
+  @include flex-center();
+  justify-content: flex-start;
+  gap: 4px;
+  svg {
+    cursor: pointer;
+  }
+}
+
+.level_text {
+  @include text-form-style;
+  font-weight: bold;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.rates {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  p {
+    margin-left: 2px;
+  }
+}

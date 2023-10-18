@@ -5,7 +5,16 @@
 }
 
 @mixin text-form-style {
-  color: #1C274C;
-  font-weight: bold;
+  color: #1c274c;
   font-size: 14px;
+  font-weight: bold;
+}
+
+@mixin position_input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #1c274c;
+  padding-bottom: 6px;
+  @include text-form-style();
+  font-weight: lighter;
 }
