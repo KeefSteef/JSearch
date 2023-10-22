@@ -25,3 +25,5 @@ function StackInput(props) {
 }
 
 export default StackInput
+
+//TODO: StackInput Add onChange props

@@ -5,39 +5,22 @@
   background: $dark_blue;
   padding: 86px 100px;
 
-  .info_title {
-    background: red;
-  }
-
   &_container {
     background: white;
     border-radius: 20px;
-    min-height: 100vh;
     padding-bottom: 200px;
   }
 }
 
 .main {
-  margin-top: 50px;
   padding: 0px 160px;
-
-  .info_title {
-    background: red;
-  }
 }
 
-.desc {
-  height: 300px;
-  margin-top: 25px;
-
-  textarea {
-    margin-top: 20px;
-  }
-}
-
-.header,
-.main:nth-child(1) {
-  h3 {
-    font-size: 20px;
+.save_btn {
+  @include flex-center();
+  position: relative;
+  top: 130px;
+  button {
+    @include button(dark, 60px);
   }
 }

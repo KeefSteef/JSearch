@@ -1,10 +1,14 @@
-@import "src/scss/var";
-@import "src/scss/mixin";
+@import 'src/scss/var';
+@import 'src/scss/mixin';
 
+.header {
+  h3 {
+    font-size: 20px;
+  }
+}
 
 .basic_info_container {
   @include flex-center;
-  align-items: flex-start;
   gap: 45px;
   padding-top: 115px;
 }
@@ -15,18 +19,9 @@
   height: 150px;
   cursor: pointer;
   border-radius: 50%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
-
-.email_input {
-  margin-top: 15px;
-}
-
-.info_title {
-  @include text-form-style;
-  padding-bottom: 15px;
-  border-bottom: solid 2px rgba($dark_blue, .1);
-  font-size: 18px;
+  box-shadow:
+    rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .info_form {
@@ -36,4 +31,3 @@
   column-gap: 40px;
   row-gap: 20px;
 }
-

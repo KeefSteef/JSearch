@@ -3,7 +3,7 @@ import FormInput from '../UI/FormInput/FormInput.jsx'
 
 function UploadHeader(props) {
   return (
-    <section className={cls.basic_info}>
+    <header className={cls.header}>
       <div className={cls.basic_info_container}>
         <div className={cls.img_container}>
           <img src="/logo.png" alt="" />
@@ -21,7 +21,7 @@ function UploadHeader(props) {
           </div>
         </div>
       </div>
-    </section>
+    </header>
   )
 }
 

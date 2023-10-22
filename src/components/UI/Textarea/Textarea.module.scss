@@ -1,10 +1,7 @@
-@import "src/scss/var";
-@import "src/scss/mixin";
-
+@import 'src/scss/var';
+@import 'src/scss/mixin';
 
 .textarea {
-  height: 100%;
-
   textarea {
     border: solid 2px $dark-blue;
     color: $dark-blue;

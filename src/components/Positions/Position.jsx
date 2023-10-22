@@ -1,5 +1,5 @@
 import cls from './Position.module.scss'
-import PositionBody from '../Positions/PositionBody'
+import PositionBody from '../PositionBody/PositionBody'
 import { useState } from 'react'
 
 function Position(props) {

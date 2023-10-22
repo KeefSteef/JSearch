@@ -1,7 +1,8 @@
-import cls from './Positions.module.scss'
+import cls from './PositionBody.module.scss'
 import FormInput from '../UI/FormInput/FormInput.jsx'
 import Switcher from '../UI/Switcher/Switcher.jsx'
 import VacationStack from '../VacationStack/VacationStack.jsx'
+import Textarea from '../UI/Textarea/Textarea'
 
 function PositionBody(props) {
   return (
@@ -45,8 +46,16 @@ function PositionBody(props) {
       <div className={cls.stack}>
         <VacationStack />
       </div>
+      <div className={cls.desc}>
+        <div className={'info_title'}>
+          <h3>Description</h3>
+        </div>
+        <Textarea name={'test'} />
+      </div>
     </div>
   )
 }
 
 export default PositionBody
+
+//TODO: SWitcher label to Switcher component

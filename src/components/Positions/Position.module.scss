@@ -1,6 +1,10 @@
 @import 'src/scss/var';
 @import 'src/scss/mixin';
 
+.position {
+  margin-top: 10px;
+}
+
 .position_container {
   width: 100%;
   background: $dark-blue;
@@ -10,9 +14,8 @@
   border-radius: 5px;
 
   h3 {
-    font-weight: bold;
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
   }
 }
 
@@ -36,18 +39,12 @@
 }
 
 .save_btn {
-  border-radius: 100px;
-  background: $dark-blue;
+  @include button(light, 15px);
   color: white;
   border: solid 2px white;
-  padding: 10px 15px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 12px;
-  transition: 0.2s;
   &:hover {
-    background: white;
     color: $dark-blue;
+    background: white;
   }
 }
 

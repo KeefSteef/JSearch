@@ -5,9 +5,6 @@
   @include flex-center();
   justify-content: flex-start;
   gap: 4px;
-  svg {
-    cursor: pointer;
-  }
 }
 
 .level_text {

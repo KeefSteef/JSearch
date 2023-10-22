@@ -18,3 +18,30 @@
   @include text-form-style();
   font-weight: lighter;
 }
+
+@mixin button($type, $paddingX) {
+  @include flex-center();
+  border-radius: 100px;
+  border: solid 2px #1c274c;
+  padding: 10px $paddingX;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+
+  @if $type == light {
+    background: transparent;
+    color: #1c274c;
+    &:hover {
+      background: #1c274c;
+      color: white;
+    }
+  } @else if $type == dark {
+    background: #1c274c;
+    color: white;
+    &:hover {
+      background: white;
+      color: #1c274c;
+    }
+  }
+}
