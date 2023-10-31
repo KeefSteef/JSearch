@@ -1,0 +1,16 @@
+@import 'src/scss/mixin';
+@import 'src/scss/var';
+
+.amounts {
+  @include flex-center();
+  gap: 5px;
+}
+
+.sallary_select {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  h3 {
+    color: $dark-blue;
+  }
+}

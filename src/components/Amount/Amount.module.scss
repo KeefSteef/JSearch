@@ -1,0 +1,28 @@
+@import 'src/scss/mixin';
+@import 'src/scss/var';
+
+$half-of-vissible-of-dark-blue: rgba($dark-blue, 0.5);
+
+.amount {
+  width: 100%;
+  padding-left: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 120px;
+  border: solid 1.5px $half-of-vissible-of-dark-blue;
+
+  &_title {
+    color: $half-of-vissible-of-dark-blue;
+    font-size: 14px;
+  }
+
+  p {
+    font-weight: bold;
+  }
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+}
