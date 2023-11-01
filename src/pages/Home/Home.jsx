@@ -16,9 +16,6 @@ function Home() {
           <VacationBoard />
         </div>
       </main>
-      <div className={cls.smth}>
-        <Filter />
-      </div>
     </section>
   )
 }

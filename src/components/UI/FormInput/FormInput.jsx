@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import cls from './FormInput.module.scss'
 
-function FormInput({ name, label }) {
-  const [value, setValue] = useState('')
+function FormInput({ name, label, defaultValue = '' }) {
+  const [value, setValue] = useState(defaultValue)
   return (
     <div className={cls.input}>
       <label htmlFor={name}>{label}</label>

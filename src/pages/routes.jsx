@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Home from './Home/Home.jsx'
 import Upload from './Upload/Upload.jsx'
+import Profile from './Profile/Profile'
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,12 @@ const router = createBrowserRouter([
   {
     path: '/upload',
     element: <Upload />,
+  },
+  //TODO: Must be /profile/id
+
+  {
+    path: '/profile',
+    element: <Profile />,
   },
 ])
 

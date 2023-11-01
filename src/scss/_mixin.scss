@@ -45,3 +45,10 @@
     }
   }
 }
+
+@mixin title-divider($fz, $pb) {
+  @include text-form-style();
+  font-size: $fz;
+  border-bottom: solid 2px rgba($dark-blue, 0.1);
+  padding-bottom: $pb;
+}

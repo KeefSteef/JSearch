@@ -13,17 +13,17 @@ function Switcher({ variants = [], name }) {
 
   return (
     <div className={`${cls.switcher} switcher`}>
-      <div className={cls.switcher_container}>
+      <ul className={cls.switcher_container}>
         {variantsWithId.map((item) => {
           const isActive = activeVariant === item.id
           return (
-            <div key={item.id} onClick={() => setActiveVariant(item.id)}>
+            <li key={item.id} onClick={() => setActiveVariant(item.id)}>
               {isActive && <motion.span layoutId={`${name}Switcher`} />}
               <p className={isActive ? cls.active : ''}>{item.label}</p>
-            </div>
+            </li>
           )
         })}
-      </div>
+      </ul>
     </div>
   )
 }

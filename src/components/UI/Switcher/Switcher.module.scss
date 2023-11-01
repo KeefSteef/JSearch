@@ -16,14 +16,14 @@
 
   span {
     position: absolute;
-    background: #1C274C;
+    background: #1c274c;
     inset: 0;
     z-index: 1;
     border-radius: 200px;
   }
 
-  div {
-    color: #1C274C;
+  li {
+    color: #1c274c;
     position: relative;
     font-weight: bold;
     text-align: center;
@@ -38,8 +38,7 @@
   }
 }
 
-
 .active {
   color: white;
-  transition: color .3s;
+  transition: color 0.3s;
 }
