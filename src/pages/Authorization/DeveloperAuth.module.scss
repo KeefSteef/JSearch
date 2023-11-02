@@ -1,0 +1,64 @@
+@import 'src/scss/mixin';
+@import 'src/scss/var';
+
+.auth_container {
+  @include flex-center();
+  justify-content: space-between;
+}
+
+.left_side {
+  @include flex-center();
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.right_side {
+  width: 50%;
+  height: 100vh;
+  img {
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+.auth_form {
+  background: white;
+  box-shadow: $shadow;
+  position: relative;
+  z-index: 15;
+  left: 80px;
+  padding: 62px;
+  top: -20px;
+  h2 {
+    display: flex;
+    gap: 5px;
+    font-size: 30px;
+    color: $dark-blue;
+    padding-bottom: 27px;
+    span {
+      font-weight: 200;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  small {
+    margin-top: 5px;
+    span {
+      cursor: pointer;
+
+      font-weight: bold;
+    }
+  }
+}
