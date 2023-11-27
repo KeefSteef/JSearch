@@ -1,21 +1,21 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
-export const useOutsideClick = (callback, exceptionClass = '') => {
+export const useOutsideClick = (initialIsVisible) => {
+  const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible)
   const ref = useRef(null)
 
+  const handleClickOutside = (event) => {
+    if (ref.current && !ref.current.contains(event.target)) {
+      setIsComponentVisible(false)
+    }
+  }
+
   useEffect(() => {
-    const handleClick = (event) => {
-      const target = event.target
-      if (ref.current && (!exceptionClass || !target.className.includes(exceptionClass))) {
-        callback()
-      }
-    }
-
-    document.addEventListener('click', handleClick)
+    document.addEventListener('click', handleClickOutside, true)
     return () => {
-      document.removeEventListener('click', handleClick)
+      document.removeEventListener('click', handleClickOutside, true)
     }
-  }, [ref])
+  }, [])
 
-  return ref
+  return { ref, isComponentVisible, setIsComponentVisible }
 }

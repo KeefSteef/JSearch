@@ -1,16 +1,13 @@
-import mapboxgl from 'mapbox-gl'
-import { useLayoutEffect, useRef, useState } from 'react' // eslint-disable-line import/no-webpack-loader-syntax
 import cls from './MapWrap.module.scss'
-import Point from '../../components/Point/Point.jsx'
-import Map, { Marker, Popup } from 'react-map-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
-
-mapboxgl.accessToken = import.meta.env.VITE_MAP_ACCESS_TOKEN
+import { MapContainer, TileLayer, Marker } from 'react-leaflet'
+import 'leaflet/dist/leaflet.css'
+import MarkerClusterGroup from 'react-leaflet-cluster'
+import { DivIcon } from 'leaflet/dist/leaflet-src.esm.js'
 
 const coords = {
   lng: 31.590314335766053,
   lat: 48.972272868662245,
-  zoom: 5.7,
+  zoom: 6.45,
 }
 
 const mockData = [
@@ -33,29 +30,48 @@ const mockData = [
   },
 ]
 
+const generateIcon = (lang = 'js') =>
+  new DivIcon({
+    html: `<img src="/${lang}_point.png" class="point-icon" alt="marker-icon"/>`,
+    className: 'point-icon',
+    iconSize: [30, 30],
+  })
+
+const clusterIconCreateFunction = (cluster) =>
+  new DivIcon({
+    html: `    
+             <div>
+                <span>${cluster.getChildCount()}</span>
+             </div>
+            `,
+    className: 'cluster_icon',
+    iconSize: [35, 35],
+  })
+
 function MapWrap() {
   return (
     <div className={cls.map_container}>
-      <Map
-        mapboxAccessToken={import.meta.env.VITE_MAP_ACCESS_TOKEN}
-        initialViewState={{
-          longitude: coords.lng,
-          latitude: coords.lat,
-          zoom: 5.7,
-        }}
-        mapStyle="mapbox://styles/mapbox/light-v11"
+      <MapContainer
+        scrollWheelZoom={true}
+        className={cls.map_container}
+        center={[coords.lat, coords.lng]}
+        zoom={coords.zoom}
+        zoomControl={false}
       >
-        {mockData.map(({ positions, companyId, location }) => (
-          <Marker
-            key={companyId}
-            longitude={location.longitude}
-            latitude={location.latitude}
-            anchor="top"
-          >
-            <Point positions={positions} companyId={companyId} location={location} />
-          </Marker>
-        ))}
-      </Map>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://api.mapbox.com/styles/v1/scarseese/clp6sv3c700ie01pcgn7majtu/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoic2NhcnNlZXNlIiwiYSI6ImNsbjh5cXl2aDAyZm4ycWw3dTV0OXNpYWkifQ.FSNASKrYhWTNhhcu4A-6qQ"
+        />
+        <MarkerClusterGroup iconCreateFunction={clusterIconCreateFunction}>
+          {mockData.map((item) => (
+            <Marker
+              key={item.companyId}
+              position={[item.location.latitude, item.location.longitude]}
+              icon={generateIcon()}
+            ></Marker>
+          ))}
+        </MarkerClusterGroup>
+      </MapContainer>
     </div>
   )
 }

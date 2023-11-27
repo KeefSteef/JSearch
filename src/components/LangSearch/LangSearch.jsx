@@ -2,49 +2,47 @@ import Select from '../UI/Select/Select.jsx'
 import LangOption from '../LangOption/LangOption.jsx'
 import SearchLangInput from '../SearchLangInput/SearchLangInput.jsx'
 import cls from './LangSearch.module.scss'
-import Badge from '../UI/Badge/Badge.jsx'
 import { useState } from 'react'
 import { useOutsideClick } from '../../hooks/useOutsideClick.js'
+import Badges from '../UI/Badge/Badges.jsx'
 
-const mockData = [
-  {
-    value: 'php',
-    label: 'PHP',
-  },
+//TODO:  Create utils func for ReExp cases
 
-  {
-    value: 'js',
-    label: 'JavaScript',
-  },
-]
+const regexHandler = (value) => new RegExp(value.split('').join('.*'), 'i')
 
-function LangSearch() {
-  const [isTouched, setTouched] = useState(false)
-  const ref = useOutsideClick(() => setTouched(false), 'badge')
+function LangSearch({ selectedLangs, langs, removeParam, optionClickHandler }) {
+  const [value, setValue] = useState('')
+  const { ref, isComponentVisible, setIsComponentVisible } = useOutsideClick(false)
+
+  const regex = regexHandler(value)
+  const options = langs.filter((option) => regex.test(option.label))
 
   return (
-    <div onClick={(event) => event.stopPropagation()}>
-      <div ref={ref} onClick={() => setTouched(true)}>
-        <SearchLangInput isTouched={isTouched} langsData={mockData} />
+    <div ref={ref} onClick={(event) => event.stopPropagation()}>
+      <div onClick={() => setIsComponentVisible(true)}>
+        <SearchLangInput
+          removeParam={removeParam}
+          isTouched={isComponentVisible}
+          langsData={selectedLangs}
+          setValue={setValue}
+        />
       </div>
       <div className={cls.search_box}>
-        {isTouched && (
+        {isComponentVisible && (
           <div className={cls.search_box_container}>
             <div className={cls.search_box_selected_langs}>
-              <div className={cls.search_box_selected_langs_container}>
-                {mockData.map((lang) => (
-                  <Badge>{lang.label}</Badge>
-                ))}
-              </div>
+              <Badges data={selectedLangs} onCloseHandler={removeParam} />
             </div>
             <Select>
-              {mockData.map((option) => {
+              {options.map((option) => {
                 return (
-                  <li key={option.value}>
-                    <LangOption lang={option.value} onClickHandler={() => {}}>
-                      {option.label}
-                    </LangOption>
-                  </li>
+                  <LangOption
+                    key={option.value}
+                    lang={option.value}
+                    onClickHandler={() => optionClickHandler(option.value)}
+                  >
+                    {option.label}
+                  </LangOption>
                 )
               })}
             </Select>

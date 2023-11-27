@@ -9,6 +9,7 @@
     cursor: pointer;
     padding: 13px;
     transition: .3s;
+
     &:hover {
       background: rgba(#D9D9D9, .2);
     }
@@ -19,14 +20,3 @@
   }
 }
 
-.search_container {
-  width: 300px;
-  border: solid 2px red;
-
-  input {
-    padding: 10px;
-    outline: none;
-    border-radius: 20px;
-    border: solid 2px rgba(0,0,0,0.1);
-  }
-}

@@ -1,14 +1,17 @@
 import cls from './Navbar.module.scss'
 import Category from './Category.jsx'
 
-function Categories() {
+function Categories({ categories, isCategoryLangSelect, categoryClickHandler }) {
   return (
     <ul className={cls.categories}>
-      {['html', 'js', 'php', 'ruby'].map((lang) => {
+      {categories.map((lang) => {
         return (
-          <li key={lang}>
-            <Category lang={lang} />
-          </li>
+          <Category
+            key={lang}
+            lang={lang}
+            isSelect={isCategoryLangSelect(lang)}
+            onClickHandler={() => categoryClickHandler(lang)}
+          />
         )
       })}
     </ul>

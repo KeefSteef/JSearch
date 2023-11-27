@@ -1,6 +1,7 @@
 .search_box {
   position: relative;
   top: 10px;
+  z-index: 600;
 }
 
 .search_box_container {
@@ -10,21 +11,18 @@
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   padding-bottom: 10px;
-  z-index: 30;
+  z-index: 130;
 }
 
 
 .search_box_selected_langs {
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
-}
-
-.search_box_selected_langs_container {
   display: flex;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.1);
   padding: 20px 10px;
   flex-wrap: wrap;
   align-items: center;
   gap: 5px;
-  width: 80%;
+  width: 100%;
 
   ul {
     padding: 10px;

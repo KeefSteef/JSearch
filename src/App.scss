@@ -19,3 +19,13 @@ body, html {
   border-bottom: solid 2px rgba($dark_blue, .1);
   font-size: 13px;
 }
+
+.cluster_icon {
+  font-size: 13px;
+  box-shadow: rgba(#1C274C, 0.3) 0px 0px 0px 5px;
+  border-radius: 50%;
+  background: #1C274C;
+  color: white;
+  @include flex-center;
+
+}

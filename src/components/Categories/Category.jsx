@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import cls from './Navbar.module.scss'
 import { motion, useAnimationControls } from 'framer-motion'
+import { useSearchParams } from 'react-router-dom'
+import { useCategoryParams } from '../../hooks/useCategoryParams.js'
 
-function Category({ lang }) {
-  const [isSelected, setIsSelected] = useState(false)
+function Category({ lang, isSelect = false, onClickHandler }) {
   const controls = useAnimationControls()
 
   return (
@@ -12,12 +13,12 @@ function Category({ lang }) {
       transition={{ duration: 0.25 }}
       onClick={() => {
         controls.start({ x: [0, 5, 0] })
-        setIsSelected((prev) => !prev)
+        onClickHandler()
       }}
     >
       <img
         src={`/${lang}.svg`}
-        className={`${cls.category} ${isSelected ? cls.active : ''}`}
+        className={`${cls.category} ${isSelect ? cls.active : ''}`}
         alt={'navbar category'}
       />
     </motion.div>
